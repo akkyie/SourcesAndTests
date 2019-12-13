@@ -1,0 +1,15 @@
+name: SourcesAndTests
+targets:
+  Foo:
+    type: framework
+    platform: iOS
+    sources:
+      - path: Sources
+        excludes: ["**/*.test.swift"]
+    testTargets: [FooTests]
+  FooTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: Sources
+        includes: ["**/*.test.swift"]
